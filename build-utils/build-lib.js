@@ -4,7 +4,6 @@ const path = require('path')
 const { execSync } = require('child_process')
 const libConfig = require('../lib')
 const _ = require('lodash')
-const parseComponent = require('@vue/component-compiler-utils').parse
 
 console.info("🚀 Let's build this thing!")
 
@@ -121,27 +120,11 @@ export * from './src${componentName ? '/' + componentName + '.vue' : ''}'
 `
   )
 
-  let description = libConfig.description
-  let example
-  if (componentName) {
-    const srcFilePath = getPath(`../src/${componentName}.vue`)
-    const result = parseComponent({
-      source: fs.readFileSync(srcFilePath, { encoding: 'utf8' }),
-      filename: srcFilePath,
-      compiler: require('vue-template-compiler')
-    })
-    description = JSON.parse(
-      result.customBlocks.find(block => block.type === 'meta').content
-    ).description
-    example = result.customBlocks
-      .find(block => block.type === 'example')
-      .content.trim()
-  }
   const packageConfig = {
     name: packageName,
     moduleName: componentName || _.upperFirst(_.camelCase(packageName)),
-    description,
-    example
+    description: `${componentName} is a module from ${packageName}`,
+    example: `<${packageName} />`
   }
   console.info(`📝 Writing package.json for ${packageConfig.moduleName}`)
   fs.writeFileSync(

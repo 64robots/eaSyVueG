@@ -57,11 +57,7 @@
       ]
     ]
   },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not ie <= 8"
-  ],
+  "browserslist": ["> 1%", "last 2 versions", "not ie <= 8"],
   "eslintConfig": {
     "root": true,
     "parserOptions": {
@@ -78,16 +74,10 @@
       "no-console": [
         "warn",
         {
-          "allow": [
-            "warn",
-            "error"
-          ]
+          "allow": ["warn", "error"]
         }
       ],
-      "vue/component-name-in-template-casing": [
-        "error",
-        "PascalCase"
-      ],
+      "vue/component-name-in-template-casing": ["error", "PascalCase"],
       "vue/multiline-html-element-content-newline": "error",
       "vue/singleline-html-element-content-newline": "error",
       "vue/no-spaces-around-equal-signs-in-attribute": "error",
@@ -102,11 +92,7 @@
     },
     "overrides": [
       {
-        "files": [
-          "src/**/*",
-          "demo/**/*",
-          "tests/unit/**/*"
-        ],
+        "files": ["src/**/*", "demo/**/*", "tests/unit/**/*"],
         "parserOptions": {
           "parser": "babel-eslint",
           "sourceType": "module"
@@ -116,24 +102,18 @@
         }
       },
       {
-        "files": [
-          "tests/e2e/**/*"
-        ],
+        "files": ["tests/e2e/**/*"],
         "parserOptions": {
           "parser": "babel-eslint",
           "sourceType": "module"
         },
-        "plugins": [
-          "cypress"
-        ],
+        "plugins": ["cypress"],
         "env": {
           "cypress/globals": true
         }
       },
       {
-        "files": [
-          "**/*.unit.js"
-        ],
+        "files": ["**/*.unit.js"],
         "parserOptions": {
           "parser": "babel-eslint",
           "sourceType": "module"
@@ -156,18 +136,10 @@
     "/tests/unit/coverage/"
   ],
   "jest": {
-    "setupFiles": [
-      "<rootDir>/tests/unit/setup"
-    ],
+    "setupFiles": ["<rootDir>/tests/unit/setup"],
     "setupTestFrameworkScriptFile": "<rootDir>/tests/unit/matchers",
-    "testMatch": [
-      "**/(*.)unit.js"
-    ],
-    "moduleFileExtensions": [
-      "js",
-      "json",
-      "vue"
-    ],
+    "testMatch": ["**/(*.)unit.js"],
+    "moduleFileExtensions": ["js", "json", "vue"],
     "transform": {
       "^.+\\.vue$": "vue-jest",
       "^.+\\.js$": "babel-jest"
@@ -175,9 +147,7 @@
     "moduleNameMapper": {
       "\\.(jpe?g|png|gif|webp|svg|mp4|webm|ogg|mp3|wav|flac|aac|woff2?|eot|ttf|otf)$": "<rootDir>/tests/unit/fixtures/empty-string.js"
     },
-    "snapshotSerializers": [
-      "jest-serializer-vue"
-    ],
+    "snapshotSerializers": ["jest-serializer-vue"],
     "coverageDirectory": "<rootDir>/tests/unit/coverage",
     "collectCoverageFrom": [
       "src/**/*.{js,vue}",
@@ -203,20 +173,9 @@
       "git add",
       "npm run unit -- --bail --findRelatedTests"
     ],
-    "*.css": [
-      "stylelint --fix",
-      "prettier --write --loglevel warn",
-      "git add"
-    ],
-    "*.md": [
-      "markdownlint",
-      "prettier --write --loglevel warn",
-      "git add"
-    ],
-    "*.{png,jpeg,jpg,gif,svg}": [
-      "imagemin-lint-staged",
-      "git add"
-    ]
+    "*.css": ["stylelint --fix", "prettier --write --loglevel warn", "git add"],
+    "*.md": ["markdownlint", "prettier --write --loglevel warn", "git add"],
+    "*.{png,jpeg,jpg,gif,svg}": ["imagemin-lint-staged", "git add"]
   },
   "postcss": {
     "plugins": {
@@ -250,13 +209,10 @@
       "selector-max-type": [
         0,
         {
-          "ignore": [
-            "child",
-            "descendant",
-            "compounded"
-          ]
+          "ignore": ["child", "descendant", "compounded"]
         }
       ]
     }
-  }
+  },
+  "version": "0.0.1"
 }

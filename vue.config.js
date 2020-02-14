@@ -33,7 +33,7 @@ module.exports = {
     if (!process.env.VUE_APP_E2E) {
       config
         .plugin('ignore-e2e-packages')
-        .use(IgnorePlugin, [{ resourceRegExp: /^hello-vue-components/ }])
+        .use(IgnorePlugin, [{ resourceRegExp: /^easyvueg/ }])
     }
   },
   devServer: {

@@ -120,11 +120,12 @@ export * from './src${componentName ? '/' + componentName + '.vue' : ''}'
 `
   )
 
+  const moduleName = componentName || _.upperFirst(_.camelCase(packageName))
   const packageConfig = {
     name: packageName,
-    moduleName: componentName || _.upperFirst(_.camelCase(packageName)),
+    moduleName,
     description: `${componentName} is a module from ${packageName}`,
-    example: `<${packageName} />`
+    example: `<${componentName} />`
   }
   console.info(`📝 Writing package.json for ${packageConfig.moduleName}`)
   fs.writeFileSync(
@@ -243,7 +244,7 @@ Or, if you only want to use a small subset of components, drop them in individua
 </div>
 
 <script src="https://unpkg.com/vue"></script>
-<script src="https://unpkg.com/${package.name}/HelloA"></script>
+<script src="https://unpkg.com/${package.name}/VPath"></script>
 <script>
 new Vue({ el: '#app' })
 </script>
@@ -268,7 +269,7 @@ Vue.use(${package.moduleName})
 or import and locally register a single component with:
 
 \`\`\`js
-import { HelloA } from '${package.name}'
+import { VPath } from '${package.name}'
 
 export default {
 components: { ${package.moduleName} }
@@ -280,8 +281,8 @@ components: { ${package.moduleName} }
 If you only want to use a small subset of components, import only individually packaged components to reduce the size of your application:
 
 \`\`\`js
-import HelloA from 'hello-vue-components/HelloA'
-import HelloB from 'hello-vue-components/HelloB'
+import VPath from 'easyvueg/VPath'
+import VRect from 'easyvueg/VRect'
 \`\`\`
 `
 

@@ -1,4 +1,4 @@
-# SVueG
+# eaSyVueG
 
 > Human Friendly SVG components made with Vue.
 
@@ -15,7 +15,7 @@ Drop the library in with a `<script>` tag alongside Vue to globally install all 
 </div>
 
 <script src="https://unpkg.com/vue"></script>
-<script src="https://unpkg.com/svueg"></script>
+<script src="https://unpkg.com/easyvueg"></script>
 <script>
   new Vue({ el: '#app' })
 </script>
@@ -30,8 +30,8 @@ Or, if you only want to use a small subset of components, drop them in individua
 </div>
 
 <script src="https://unpkg.com/vue"></script>
-<script src="https://unpkg.com/hello-vue-components/VPath"></script>
-<script src="https://unpkg.com/hello-vue-components/VRect"></script>
+<script src="https://unpkg.com/easyvueg/VPath"></script>
+<script src="https://unpkg.com/easyvueg/VRect"></script>
 <script>
   new Vue({ el: '#app' })
 </script>
@@ -42,21 +42,21 @@ Or, if you only want to use a small subset of components, drop them in individua
 Install the library with NPM:
 
 ```bash
-npm install svueg
+npm install easyvueg
 ```
 
 Then register the library as a plugin to globally install all components:
 
 ```js
-import SVueG from 'svueg'
+import easyvueg from 'easyvueg'
 
-Vue.use(SVueG)
+Vue.use(easyvueg)
 ```
 
 Or, import components individually for local registration:
 
 ```js
-import { VPath, VRect } from 'svueg'
+import { VPath, VRect } from 'easyvueg'
 
 export default {
   components: { VPath, VRect }
@@ -68,6 +68,6 @@ export default {
 If you only want to use a small subset of components, only import individually packaged components to reduce the size of your application:
 
 ```js
-import VPath from 'svueg.VPath'
-import VRect from 'svueg.VRect'
+import VPath from 'easyvueg.VPath'
+import VRect from 'easyvueg.VRect'
 ```

@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VRect.vue render correctly 1`] = `<rect width="100" height="80" x="5" y="5" rx="2" ry="2" fill="red"></rect>`;

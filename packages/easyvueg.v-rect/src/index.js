@@ -4,16 +4,24 @@
 //
 // YOU SHOULD NEVER UPDATE THIS FILE DIRECTLY
 
+import VCircle from './VCircle.vue'
 import VPath from './VPath.vue'
+import VPolyLine from './VPolyLine.vue'
+import VPolygon from './VPolygon.vue'
 import VRect from './VRect.vue'
+import VText from './VText.vue'
 
 // Export components individually
-export { VPath, VRect }
+export { VCircle, VPath, VPolyLine, VPolygon, VRect, VText }
 
 // What should happen if the user installs the library as a plugin
 function install(Vue) {
+  Vue.component('VCircle', VCircle)
   Vue.component('VPath', VPath)
+  Vue.component('VPolyLine', VPolyLine)
+  Vue.component('VPolygon', VPolygon)
   Vue.component('VRect', VRect)
+  Vue.component('VText', VText)
 }
 
 // Export the library as a plugin

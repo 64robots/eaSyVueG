@@ -1,0 +1,25 @@
+{
+  "name": "easyvueg.v-circle",
+  "description": "VCircle is a module from easyvueg.v-circle",
+  "author": {
+    "name": "64 Robots",
+    "email": "info@64robots.com",
+    "github": "64robots"
+  },
+  "license": "MIT",
+  "homepage": "https://www.npmjs.com/package/easyvueg.v-circle",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/64robots/easyvueg.git"
+  },
+  "bugs": {
+    "url": "https://github.com/64robots/easyvueg/issues"
+  },
+  "module": "index.js",
+  "main": "cjs/index.js",
+  "unpkg": "umd/index.min.js",
+  "jsdelivr": "umd/index.min.js",
+  "peerDependencies": {
+    "vue": ">=2.0.0"
+  }
+}

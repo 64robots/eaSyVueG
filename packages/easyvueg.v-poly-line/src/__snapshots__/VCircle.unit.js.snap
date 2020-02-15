@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VCircle.vue renders a circle correctly 1`] = `<circle cx="0" cy="0" r="1" fill="red"></circle>`;
+
+exports[`VCircle.vue renders a ellipse correctly 1`] = `<ellipse cx="0" cy="0" rx="2" ry="2" fill="red"></ellipse>`;

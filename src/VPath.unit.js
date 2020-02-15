@@ -1,15 +1,38 @@
+import { shallowMount } from '@vue/test-utils'
 import VPath from './VPath'
 
-test('exports a valid component', () => {
-  expect(VPath).toBeAComponent()
-})
+describe('VPath.vue', () => {
+  it('has a name', () => {
+    const wrapper = shallowMount(VPath, {
+      propsData: {
+        draw: []
+      }
+    })
+    expect(wrapper.name()).toBe('VPath')
+  })
 
-test('renders the text "VPath"', () => {
-  const { element } = shallowMount(VPath)
-  expect(element.textContent.trim()).toBe('VPath')
-})
+  it('renders correctly', () => {
+    const draw = [{ moveTo: { x: 10, y: 20 } }, { lineTo: { x: 20, y: 20 } }]
+    const wrapper = shallowMount(VPath, {
+      propsData: { draw },
+      attrs: { fill: 'red' }
+    })
+    expect(wrapper.html()).toMatchSnapshot()
+  })
 
-test('adds a "hello" class on the root element', () => {
-  const { element } = shallowMount(VPath)
-  expect(element.classList.contains('hello')).toBe(true)
+  it('renders d', () => {
+    const draw = [{ moveTo: { x: 10, y: 20 } }, { lineTo: { x: 20, y: 20 } }]
+    const wrapper = shallowMount(VPath, {
+      propsData: { draw }
+    })
+    expect(wrapper.vm.d).toBe('M10 20 L20 20 Z')
+  })
+
+  it('renders attributes', () => {
+    const wrapper = shallowMount(VPath, {
+      propsData: { draw: [] },
+      attrs: { fill: 'red' }
+    })
+    expect(wrapper.vm.$refs.path.getAttribute('fill')).toBe('red')
+  })
 })
